@@ -16,7 +16,14 @@ const PostSchema = new mongoose.Schema({
     required: true,
   },
   category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
-  isPublic: Boolean,
+  isPublic: {
+	  type: Boolean,
+	  default: true
+  },
+  isPinned: {
+	type: Boolean,
+	default: false
+  },
   authors: [String],
   title: {
     type: String,
