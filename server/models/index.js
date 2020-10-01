@@ -21,6 +21,7 @@ module.exports.connect = (uri) => {
   require('./menu')
   require('./comment')
   require('./configuration')
+  require('./block');
 
   return promise
 }
