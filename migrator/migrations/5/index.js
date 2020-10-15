@@ -1,3 +1,6 @@
+const mongoose = require('mongoose')
+const Post = mongoose.model('Post')
+
 async function hasRowsWithoutPinned () {
 	return (!!(
 	  await Post.collection.countDocuments({ isPinned: { $exists: false } })
@@ -11,7 +14,7 @@ async function check () {
 async function migrate () {
 	console.log('start pinned migration for posts:')
 	await Post.collection.update({ isPinned: { $exists: false } }, { $set: { isPinned: false } }, { multi: true })
-  
+
 	console.log('Done!');
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "@greenpress/content",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "migrationVersion": 5,
   "description": "Content API for greenpress platform",
   "keywords": [
