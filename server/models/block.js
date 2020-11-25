@@ -25,6 +25,18 @@ const BlockSchema = new mongoose.Schema({
       "script", // for ads
     ],
   },
+  relatedCategories: [{
+		type: mongoose.Schema.Types.ObjectID, 
+		ref: category
+	}],
+  relatedPosts: [{
+		type: mongoose.Schema.Types.ObjectID, 
+		ref: post
+	}],
+  relatedLayouts: [{
+		type: String,
+		enum: ['layout', 'index', 'category', 'post', 'search', 'tag', 'error']
+	  }],
 });
 
 // some useful methods
